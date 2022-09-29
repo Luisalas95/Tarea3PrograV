@@ -18,13 +18,16 @@ namespace CapaCliente
 
         protected void btn_IniciarSesion_Click(object sender, EventArgs e)
         {   
+
             string usuario = txt_Usuario.Text;
             int result = Int32.Parse(usuario);
             string clave= txt_Clave.Text;
+            Encriptar encriptar = new Encriptar();
+            string clavedes =encriptar.GetSHA256(clave);
 
             ClaseUsuario CU = new ClaseUsuario();
-            CU.ValidarUsuario(result,clave);
-
+            CU.ValidarUsuario(result,clavedes);
+            Response.Redirect("CambiarCredenciales.aspx");
         }
 
 

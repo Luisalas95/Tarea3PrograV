@@ -134,6 +134,7 @@
     <Content Include="Global.asax" />
     <Content Include="Páginas\AdministracionProductos.aspx" />
     <Content Include="Páginas\AgregarProductoNuevo.aspx" />
+    <Content Include="Páginas\CambiarCredenciales.aspx" />
     <Content Include="Páginas\CrearUsuario.aspx" />
     <Content Include="Páginas\Login.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -166,6 +167,13 @@
     </Compile>
     <Compile Include="Páginas\AgregarProductoNuevo.aspx.designer.cs">
       <DependentUpon>AgregarProductoNuevo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Páginas\CambiarCredenciales.aspx.cs">
+      <DependentUpon>CambiarCredenciales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Páginas\CambiarCredenciales.aspx.designer.cs">
+      <DependentUpon>CambiarCredenciales.aspx</DependentUpon>
     </Compile>
     <Compile Include="Páginas\CrearUsuario.aspx.cs">
       <DependentUpon>CrearUsuario.aspx</DependentUpon>

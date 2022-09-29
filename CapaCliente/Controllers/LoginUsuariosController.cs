@@ -15,7 +15,7 @@ namespace CapaCliente.Controllers
 {
     public class LoginUsuariosController : ApiController
     {
-        private tiusr6pl_Tarea3PrograVEntities1 db = new tiusr6pl_Tarea3PrograVEntities1();
+        private tiusr6pl_Tarea3PrograVEntities2 db = new tiusr6pl_Tarea3PrograVEntities2();
 
         // GET: api/LoginUsuarios
         public IQueryable<LoginUsuario> GetLoginUsuarios()
@@ -30,7 +30,7 @@ namespace CapaCliente.Controllers
             LoginUsuario loginUsuario = await db.LoginUsuarios.FindAsync(id);
             if (loginUsuario == null)
             {
-                return NotFound();
+                return BadRequest("Usuario y/o contraseña incorrectos");
             }
 
             return Ok(loginUsuario);

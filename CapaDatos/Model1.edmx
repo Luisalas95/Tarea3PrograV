@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="tiusr6pl_Tarea3PrograVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="tiusr6pl_Tarea3PrograVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="LoginUsuario">
           <Key>
             <PropertyRef Name="Identificacion" />
@@ -46,7 +46,8 @@
           <EntitySet Name="LoginUsuario" EntityType="Self.LoginUsuario" Schema="AdminPrograV" store:Type="Tables" />
           <EntitySet Name="Producto" EntityType="Self.Producto" Schema="AdminPrograV" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="tiusr6pl_Tarea3PrograVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -69,7 +70,7 @@
           <Property Name="Existencias" Type="Double" />
           <Property Name="BodegaUbicacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="tiusr6pl_Tarea3PrograVEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="tiusr6pl_Tarea3PrograVEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="LoginUsuarios" EntityType="Self.LoginUsuario" />
           <EntitySet Name="Productoes" EntityType="Self.Producto" />
           <FunctionImport Name="CRUDProducto">
@@ -90,17 +91,13 @@
             <Parameter Name="identificacion" Mode="In" Type="Int32" />
             <Parameter Name="clave" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="Verificar1">
-            <Parameter Name="identificacion" Mode="In" Type="Int32" />
-            <Parameter Name="clave" Mode="In" Type="String" />
-          </FunctionImport>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="tiusr6pl_Tarea3PrograVModelStoreContainer" CdmEntityContainer="tiusr6pl_Tarea3PrograVEntities1">
+        <EntityContainerMapping StorageEntityContainer="tiusr6pl_Tarea3PrograVModelStoreContainer" CdmEntityContainer="tiusr6pl_Tarea3PrograVEntities2">
           <EntitySetMapping Name="LoginUsuarios">
             <EntityTypeMapping TypeName="tiusr6pl_Tarea3PrograVModel.LoginUsuario">
               <MappingFragment StoreEntitySet="LoginUsuario">
@@ -123,7 +120,7 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="CRUDProducto" FunctionName="tiusr6pl_Tarea3PrograVModel.Store.CRUDProducto" />
           <FunctionImportMapping FunctionImportName="CRUDUsuario" FunctionName="tiusr6pl_Tarea3PrograVModel.Store.CRUDUsuario" />
-          <FunctionImportMapping FunctionImportName="Verificar1" FunctionName="tiusr6pl_Tarea3PrograVModel.Store.Verificar" />
+          <FunctionImportMapping FunctionImportName="Verificar" FunctionName="tiusr6pl_Tarea3PrograVModel.Store.Verificar" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -12,6 +12,8 @@
         <div>
             Ingrese los datos para la creacion de su usuario<br />
             <br />
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="cambiarCredenciales.aspx">Cambiar Credenciales</asp:HyperLink>
+            <br />
             <br />
             Identificacion&nbsp;&nbsp;
             <asp:TextBox ID="txt_ID" runat="server" Width="169px" MaxLength="20"></asp:TextBox>

@@ -11,7 +11,7 @@ namespace CapaCliente.Páginas
 {
 
 
-    public partial class CrearUsuario
+    public partial class CambiarCredenciales
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace CapaCliente.Páginas
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control HyperLink2.
+        /// Control HyperLink1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
+        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
 
         /// <summary>
         /// Control txt_ID.
@@ -60,21 +60,21 @@ namespace CapaCliente.Páginas
         protected global::System.Web.UI.WebControls.TextBox txt_Apellidos;
 
         /// <summary>
-        /// Control lblClave.
+        /// Control txt_Clave.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblClave;
+        protected global::System.Web.UI.WebControls.TextBox txt_Clave;
 
         /// <summary>
-        /// Control btnGuardar.
+        /// Control btn_Cambiar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardar;
+        protected global::System.Web.UI.WebControls.Button btn_Cambiar;
     }
 }

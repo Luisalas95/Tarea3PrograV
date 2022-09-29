@@ -13,5 +13,10 @@ namespace CapaCliente.Páginas
         {
 
         }
+
+        protected void btn_GuardarProducto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

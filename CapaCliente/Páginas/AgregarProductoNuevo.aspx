@@ -27,7 +27,7 @@
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btn_GuardarProducto" runat="server" Text="Guardar Producto" />
+            <asp:Button ID="btn_GuardarProducto" runat="server" Text="Guardar Producto" OnClick="btn_GuardarProducto_Click" />
         </div>
     </form>
 </body>

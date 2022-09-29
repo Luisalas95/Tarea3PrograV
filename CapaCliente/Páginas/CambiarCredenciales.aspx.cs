@@ -1,0 +1,40 @@
+﻿using CapaDatos;
+using CapaNegocio;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace CapaCliente.Páginas
+{
+    public partial class CambiarCredenciales : System.Web.UI.Page
+    {
+        string ClaveNueva = "";
+        string Clave = "";
+        string ClaveEncriptada = "";
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btn_Cambiar_Click(object sender, EventArgs e)
+        {
+
+            string usuario = txt_ID.Text;
+            int result = Int32.Parse(usuario);
+            string clave = txt_Clave.Text;
+            string Apellidos = txt_Apellidos.Text;
+            string Nombre = txt_Nombre.Text;
+
+            Encriptar encriptar = new Encriptar();
+            string clavedes = encriptar.GetSHA256(clave);
+
+            ClaseUsuario CU = new ClaseUsuario();
+            CU.InsertarUsuario(2, result, Nombre, Apellidos, clavedes);
+
+
+        }
+    }
+}

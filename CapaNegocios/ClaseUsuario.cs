@@ -12,30 +12,30 @@ namespace CapaNegocio
     public class ClaseUsuario
     {
         //gd comentario prueba
-        private tiusr6pl_Tarea3PrograVEntities1 entities1;
+        private tiusr6pl_Tarea3PrograVEntities2 entities;
 
         //constructor
         public ClaseUsuario()
         {
-            entities1 = new tiusr6pl_Tarea3PrograVEntities1();
+            entities = new tiusr6pl_Tarea3PrograVEntities2();
         }
         public int InsertarUsuario(int opcion, int identificacion, string nombre, string apellido, string contrasena)
         {
-            entities1.CRUDUsuario(opcion, identificacion, nombre, apellido, contrasena);
-            return entities1.SaveChanges();
+            entities.CRUDUsuario(opcion, identificacion, nombre, apellido, contrasena);
+            return entities.SaveChanges();
         }
 
         public int ValidarUsuario( int identificacion,  string contrasena)
         {
-            entities1.Verificar( identificacion, contrasena);
-            return entities1.SaveChanges();
+            entities.Verificar( identificacion, contrasena);
+            return entities.SaveChanges();
 
         }
 
         public int EliminaUsuario(int opcion, int identificacion, string nombre, string apellido, string contrasena)
         {
-            entities1.CRUDUsuario(opcion, identificacion, nombre, apellido, contrasena);
-            return entities1.SaveChanges();
+            entities.CRUDUsuario(opcion, identificacion, nombre, apellido, contrasena);
+            return entities.SaveChanges();
         }
     }
 }

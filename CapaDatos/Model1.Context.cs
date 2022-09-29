@@ -15,10 +15,10 @@ namespace CapaDatos
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class tiusr6pl_Tarea3PrograVEntities1 : DbContext
+    public partial class tiusr6pl_Tarea3PrograVEntities2 : DbContext
     {
-        public tiusr6pl_Tarea3PrograVEntities1()
-            : base("name=tiusr6pl_Tarea3PrograVEntities1")
+        public tiusr6pl_Tarea3PrograVEntities2()
+            : base("name=tiusr6pl_Tarea3PrograVEntities2")
         {
         }
     
@@ -79,7 +79,6 @@ namespace CapaDatos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CRUDUsuario", opcionParameter, iDParameter, nombreParameter, apellidosParameter, contraseñaParameter);
         }
-
     
         public virtual int Verificar(Nullable<int> identificacion, string clave)
         {

@@ -23,7 +23,8 @@
         </p>
         <div style="margin-left: 80px">
             <asp:Button ID="btn_IniciarSesion" runat="server" OnClick="btn_IniciarSesion_Click" Text="Iniciar Sesion" />
-        </div>
+            
+       </div>
         <p style="margin-left: 80px">
             &nbsp;</p>
     </form>

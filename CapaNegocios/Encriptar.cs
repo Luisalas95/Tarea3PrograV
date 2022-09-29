@@ -9,7 +9,7 @@ namespace CapaDatos
 {
     public class Encriptar
     {
-        public static string GetSHA256(string str)//funcion para realizar encriptacion
+        public  string GetSHA256(string str)//funcion para realizar encriptacion
         {
             SHA256 sha256 = SHA256Managed.Create();
 
