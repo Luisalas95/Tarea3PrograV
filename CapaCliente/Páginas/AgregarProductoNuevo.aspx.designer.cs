@@ -24,6 +24,15 @@ namespace CapaCliente.Páginas
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Control txt_codigoproduct.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txt_codigoproduct;
+
+        /// <summary>
         /// Control txt_CodigoProducto.
         /// </summary>
         /// <remarks>
@@ -33,39 +42,39 @@ namespace CapaCliente.Páginas
         protected global::System.Web.UI.WebControls.TextBox txt_CodigoProducto;
 
         /// <summary>
-        /// Control txt_Nombre.
+        /// Control txt_Nomb.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Nombre;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_Nomb;
 
         /// <summary>
-        /// Control txt_Existencias.
+        /// Control txt_existencia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Existencias;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txt_existencia;
 
         /// <summary>
-        /// Control txt_Ubicacion.
+        /// Control txt_UbicacionBodega.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Ubicacion;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_UbicacionBodega;
 
         /// <summary>
-        /// Control btn_GuardarProducto.
+        /// Control btn_GuardarProduc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_GuardarProducto;
+        protected global::System.Web.UI.WebControls.Button btn_GuardarProduc;
     }
 }

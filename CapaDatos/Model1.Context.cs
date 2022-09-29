@@ -92,5 +92,10 @@ namespace CapaDatos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Verificar", identificacionParameter, claveParameter);
         }
+    
+        public virtual ObjectResult<Listar_Productos_Result> Listar_Productos()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Listar_Productos_Result>("Listar_Productos");
+        }
     }
 }

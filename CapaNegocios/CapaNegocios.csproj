@@ -57,6 +57,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Encriptar.cs" />
     <Compile Include="GeneraClave.cs" />
+    <Compile Include="Productos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

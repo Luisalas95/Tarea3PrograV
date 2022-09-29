@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="tiusr6pl_Tarea3PrograVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="tiusr6pl_Tarea3PrograVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="LoginUsuario">
           <Key>
             <PropertyRef Name="Identificacion" />
@@ -38,6 +38,7 @@
           <Parameter Name="Apellidos" Type="varchar" Mode="In" />
           <Parameter Name="Contraseña" Type="char" Mode="In" />
         </Function>
+        <Function Name="Listar_Productos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="AdminPrograV" />
         <Function Name="Verificar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="AdminPrograV">
           <Parameter Name="identificacion" Type="int" Mode="In" />
           <Parameter Name="clave" Type="varchar" Mode="In" />
@@ -46,8 +47,7 @@
           <EntitySet Name="LoginUsuario" EntityType="Self.LoginUsuario" Schema="AdminPrograV" store:Type="Tables" />
           <EntitySet Name="Producto" EntityType="Self.Producto" Schema="AdminPrograV" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="tiusr6pl_Tarea3PrograVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -91,7 +91,14 @@
             <Parameter Name="identificacion" Mode="In" Type="Int32" />
             <Parameter Name="clave" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="Listar_Productos" ReturnType="Collection(tiusr6pl_Tarea3PrograVModel.Listar_Productos_Result)" />
         </EntityContainer>
+        <ComplexType Name="Listar_Productos_Result">
+          <Property Type="Int32" Name="CodigoProducto" Nullable="false" />
+          <Property Type="String" Name="NombreProducto" Nullable="false" MaxLength="30" />
+          <Property Type="Double" Name="Existencias" Nullable="true" />
+          <Property Type="String" Name="BodegaUbicacion" Nullable="true" MaxLength="20" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -121,6 +128,16 @@
           <FunctionImportMapping FunctionImportName="CRUDProducto" FunctionName="tiusr6pl_Tarea3PrograVModel.Store.CRUDProducto" />
           <FunctionImportMapping FunctionImportName="CRUDUsuario" FunctionName="tiusr6pl_Tarea3PrograVModel.Store.CRUDUsuario" />
           <FunctionImportMapping FunctionImportName="Verificar" FunctionName="tiusr6pl_Tarea3PrograVModel.Store.Verificar" />
+          <FunctionImportMapping FunctionImportName="Listar_Productos" FunctionName="tiusr6pl_Tarea3PrograVModel.Store.Listar_Productos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tiusr6pl_Tarea3PrograVModel.Listar_Productos_Result">
+                <ScalarProperty Name="CodigoProducto" ColumnName="CodigoProducto" />
+                <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
+                <ScalarProperty Name="Existencias" ColumnName="Existencias" />
+                <ScalarProperty Name="BodegaUbicacion" ColumnName="BodegaUbicacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
