@@ -11,7 +11,7 @@ namespace CapaNegocio
 {
     public class ClaseUsuario
     {
-
+        //gd
         private tiusr6pl_Tarea3PrograVEntities1 entities1;
 
         //constructor
