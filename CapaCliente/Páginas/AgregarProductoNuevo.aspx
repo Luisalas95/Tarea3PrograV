@@ -44,7 +44,7 @@
            <br />
             <br />
         <div>
-            <asp:GridView ID="GridViewProductos" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" Width="563px" DataKeyNames="CodigoProducto">
+            <asp:GridView ID="GridViewProductos" runat="server" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" Width="563px" DataKeyNames="CodigoProducto" OnSelectedIndexChanged="GridViewProductos_SelectedIndexChanged1">
                  <Columns>
                 <asp:CommandField HeaderText="Selección" ShowSelectButton="True" />
             </Columns>
@@ -65,7 +65,7 @@
     </form>
 
   
-
+    <asp:DropDownList ID="DropDownList1" runat="server" Visible="false"></asp:DropDownList>
    
 
 </body>

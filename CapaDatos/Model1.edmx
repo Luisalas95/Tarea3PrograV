@@ -21,8 +21,8 @@
           </Key>
           <Property Name="CodigoProducto" Type="int" Nullable="false" />
           <Property Name="NombreProducto" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="Existencias" Type="float" />
-          <Property Name="BodegaUbicacion" Type="varchar" MaxLength="20" />
+          <Property Name="Existencias" Type="float" Nullable="false" />
+          <Property Name="BodegaUbicacion" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <Function Name="CRUDProducto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="AdminPrograV">
           <Parameter Name="Opcion" Type="int" Mode="In" />
@@ -37,6 +37,9 @@
           <Parameter Name="Nombre" Type="varchar" Mode="In" />
           <Parameter Name="Apellidos" Type="varchar" Mode="In" />
           <Parameter Name="Contraseña" Type="char" Mode="In" />
+        </Function>
+        <Function Name="ListaProductosCodigo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="AdminPrograV">
+          <Parameter Name="codigo" Type="int" Mode="In" />
         </Function>
         <Function Name="Listar_Productos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="AdminPrograV" />
         <Function Name="Verificar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="AdminPrograV">
@@ -67,8 +70,8 @@
           </Key>
           <Property Name="CodigoProducto" Type="Int32" Nullable="false" />
           <Property Name="NombreProducto" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Existencias" Type="Double" />
-          <Property Name="BodegaUbicacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Existencias" Type="Double" Nullable="false" />
+          <Property Name="BodegaUbicacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityContainer Name="tiusr6pl_Tarea3PrograVEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="LoginUsuarios" EntityType="Self.LoginUsuario" />
@@ -92,9 +95,17 @@
             <Parameter Name="clave" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Listar_Productos" ReturnType="Collection(tiusr6pl_Tarea3PrograVModel.Listar_Productos_Result)" />
+          <FunctionImport Name="ListaProductosCodigo" ReturnType="Collection(tiusr6pl_Tarea3PrograVModel.ListaProductosCodigo_Result)">
+          <Parameter Name="codigo" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="Listar_Productos_Result">
           <Property Type="Int32" Name="CodigoProducto" Nullable="false" />
+          <Property Type="String" Name="NombreProducto" Nullable="false" MaxLength="30" />
+          <Property Type="Double" Name="Existencias" Nullable="true" />
+          <Property Type="String" Name="BodegaUbicacion" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="ListaProductosCodigo_Result">
           <Property Type="String" Name="NombreProducto" Nullable="false" MaxLength="30" />
           <Property Type="Double" Name="Existencias" Nullable="true" />
           <Property Type="String" Name="BodegaUbicacion" Nullable="true" MaxLength="20" />
@@ -132,6 +143,15 @@
             <ResultMapping>
               <ComplexTypeMapping TypeName="tiusr6pl_Tarea3PrograVModel.Listar_Productos_Result">
                 <ScalarProperty Name="CodigoProducto" ColumnName="CodigoProducto" />
+                <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
+                <ScalarProperty Name="Existencias" ColumnName="Existencias" />
+                <ScalarProperty Name="BodegaUbicacion" ColumnName="BodegaUbicacion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ListaProductosCodigo" FunctionName="tiusr6pl_Tarea3PrograVModel.Store.ListaProductosCodigo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="tiusr6pl_Tarea3PrograVModel.ListaProductosCodigo_Result">
                 <ScalarProperty Name="NombreProducto" ColumnName="NombreProducto" />
                 <ScalarProperty Name="Existencias" ColumnName="Existencias" />
                 <ScalarProperty Name="BodegaUbicacion" ColumnName="BodegaUbicacion" />

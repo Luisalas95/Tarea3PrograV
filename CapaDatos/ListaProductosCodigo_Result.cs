@@ -10,13 +10,11 @@
 namespace CapaDatos
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Producto
+    public partial class ListaProductosCodigo_Result
     {
-        public int CodigoProducto { get; set; }
         public string NombreProducto { get; set; }
-        public double Existencias { get; set; }
+        public Nullable<double> Existencias { get; set; }
         public string BodegaUbicacion { get; set; }
     }
 }

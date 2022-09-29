@@ -11,17 +11,17 @@ namespace CapaCliente.Páginas
 {
 
 
-    public partial class AgregarProductoNuevo
+    public partial class MantenimientoProductos
     {
 
         /// <summary>
-        /// Control form1.
+        /// Control form2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
 
         /// <summary>
         /// Control txt_codigoproduct.
@@ -69,30 +69,30 @@ namespace CapaCliente.Páginas
         protected global::System.Web.UI.HtmlControls.HtmlInputText txt_UbicacionBodega;
 
         /// <summary>
-        /// Control btn_GuardarProduc.
+        /// Control Btnactualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_GuardarProduc;
+        protected global::System.Web.UI.WebControls.Button Btnactualizar;
 
         /// <summary>
-        /// Control GridViewProductos.
+        /// Control BtnEliminar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewProductos;
+        protected global::System.Web.UI.WebControls.Button BtnEliminar;
 
         /// <summary>
-        /// Control DropDownList1.
+        /// Control BtnRegresar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.Button BtnRegresar;
     }
 }

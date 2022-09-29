@@ -51,21 +51,25 @@ namespace CapaCliente.Páginas
 
         }
 
-        protected void GridViewProductos_SelectedIndexChanged(object sender, EventArgs e)
+     
+
+        protected void GridViewProductos_SelectedIndexChanged1(object sender, EventArgs e)
         {
             try
             {
                 GridViewRow row = GridViewProductos.SelectedRow;
                 int CodigoProducto = Convert.ToInt32(GridViewProductos.DataKeys[row.RowIndex].Value);
-                
-                
-            
+      
+                Response.Redirect("MantenimientoProductos.aspx?CodigoP=" + CodigoProducto);
+
+
             }
             catch (Exception)
             {
 
                 Response.Write("<script> alert('Error')  </script> ");
             }
+
         }
     }
 }

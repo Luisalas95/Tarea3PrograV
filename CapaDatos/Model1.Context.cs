@@ -97,5 +97,14 @@ namespace CapaDatos
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Listar_Productos_Result>("Listar_Productos");
         }
+    
+        public virtual ObjectResult<ListaProductosCodigo_Result> ListaProductosCodigo(Nullable<int> codigo)
+        {
+            var codigoParameter = codigo.HasValue ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ListaProductosCodigo_Result>("ListaProductosCodigo", codigoParameter);
+        }
     }
 }

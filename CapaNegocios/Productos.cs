@@ -30,10 +30,19 @@ namespace CapaNegocios
             
         }
 
+    
+
         public List<Object>ConsultaProductos() { 
             var query = entities.Listar_Productos();
             return query.ToList<Object>();
         }
+
+        public List<Object> ListaProductoCodigo(int codigoProducto)
+        {
+            var query = entities.ListaProductosCodigo(codigoProducto);
+            return query.ToList<Object>();
+        }
+
 
     }
 }
