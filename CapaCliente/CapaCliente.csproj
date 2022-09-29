@@ -131,6 +131,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="CSS\Estilos.css" />
     <Content Include="Global.asax" />
     <Content Include="Páginas\AdministracionProductos.aspx" />
     <Content Include="Páginas\AgregarProductoNuevo.aspx" />
