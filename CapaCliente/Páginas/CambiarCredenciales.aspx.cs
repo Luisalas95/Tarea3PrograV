@@ -34,6 +34,7 @@ namespace CapaCliente.Páginas
 
                 ClaseUsuario CU = new ClaseUsuario();
                 CU.InsertarUsuario(2, result, Nombre, Apellidos, clavedes);
+                Response.Write("<script>alert('Datos Actualizados')</script>");
             }
             catch
             {

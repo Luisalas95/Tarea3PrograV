@@ -26,12 +26,12 @@ namespace CapaCliente
                 string usuario = txt_Usuario.Text;
                 int result = Int32.Parse(usuario);
                 string clave = txt_Clave.Text;
-                Encriptar encriptar = new Encriptar();
+                Encriptar encriptar = new Encriptar();//encripta las claves y las guarda en BD encriptadaas
                 string clavedes = encriptar.GetSHA256(clave);
 
                 ClaseUsuario CU = new ClaseUsuario();
                 CU.ValidarUsuario(result, clavedes);
-                Response.Redirect("CambiarCredenciales.aspx");
+                Response.Redirect("AgregarProductoNuevo.aspx");
             }
             catch {
                 Response.Write("<script>alert('Usuario y/o contraseña incorrectos')</script>");
