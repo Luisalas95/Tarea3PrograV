@@ -29,6 +29,7 @@ namespace CapaNegocio
         {
             entities1.Verificar( identificacion, contrasena);
             return entities1.SaveChanges();
+
         }
 
         public int EliminaUsuario(int opcion, int identificacion, string nombre, string apellido, string contrasena)

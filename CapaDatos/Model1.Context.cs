@@ -79,6 +79,7 @@ namespace CapaDatos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CRUDUsuario", opcionParameter, iDParameter, nombreParameter, apellidosParameter, contraseñaParameter);
         }
+
     
         public virtual int Verificar(Nullable<int> identificacion, string clave)
         {

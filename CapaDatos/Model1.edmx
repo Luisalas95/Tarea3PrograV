@@ -38,7 +38,7 @@
           <Parameter Name="Apellidos" Type="varchar" Mode="In" />
           <Parameter Name="Contraseña" Type="char" Mode="In" />
         </Function>
-        <Function Name="Verificar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="Verificar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="AdminPrograV">
           <Parameter Name="identificacion" Type="int" Mode="In" />
           <Parameter Name="clave" Type="varchar" Mode="In" />
         </Function>
@@ -90,6 +90,10 @@
             <Parameter Name="identificacion" Mode="In" Type="Int32" />
             <Parameter Name="clave" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="Verificar1">
+            <Parameter Name="identificacion" Mode="In" Type="Int32" />
+            <Parameter Name="clave" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -119,7 +123,7 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="CRUDProducto" FunctionName="tiusr6pl_Tarea3PrograVModel.Store.CRUDProducto" />
           <FunctionImportMapping FunctionImportName="CRUDUsuario" FunctionName="tiusr6pl_Tarea3PrograVModel.Store.CRUDUsuario" />
-          <FunctionImportMapping FunctionImportName="Verificar" FunctionName="tiusr6pl_Tarea3PrograVModel.Store.Verificar" />
+          <FunctionImportMapping FunctionImportName="Verificar1" FunctionName="tiusr6pl_Tarea3PrograVModel.Store.Verificar" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

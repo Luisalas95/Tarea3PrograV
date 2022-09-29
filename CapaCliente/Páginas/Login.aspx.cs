@@ -25,7 +25,6 @@ namespace CapaCliente
             ClaseUsuario CU = new ClaseUsuario();
             CU.ValidarUsuario(result,clave);
 
-
         }
 
 
