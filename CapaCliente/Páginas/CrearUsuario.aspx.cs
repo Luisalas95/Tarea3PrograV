@@ -39,20 +39,32 @@ namespace CapaCliente.Páginas
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            string  IDs = txt_ID.Text;
-            string Nombre= txt_Nombre.Text;
-            string Apellidos = txt_Apellidos.Text;
-            
-
-            int ID=Int32.Parse(IDs);
-            string Clave = "";
-           
-            ClaseUsuario claseUsuario = new ClaseUsuario();
+            try
+            {
+                string IDs = txt_ID.Text;
+                string Nombre = txt_Nombre.Text;
+                string Apellidos = txt_Apellidos.Text;
 
 
-            claseUsuario.InsertarUsuario(1, ID, Nombre, Apellidos, ClaveEncriptada);
+                int ID = Int32.Parse(IDs);
+                string Clave = "";
 
-            Response.Redirect("AdministracionProductos.aspx");
+                ClaseUsuario claseUsuario = new ClaseUsuario();
+
+
+                claseUsuario.InsertarUsuario(1, ID, Nombre, Apellidos, ClaveEncriptada);
+
+                Response.Redirect("AdministracionProductos.aspx");
+            }
+            catch
+            {
+                Response.Write("<script>alert('Error al guardar los datos, intente de nuevo')</script>");
+            }
+        }
+
+        protected void txt_Apellidos_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

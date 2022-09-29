@@ -21,19 +21,29 @@ namespace CapaCliente.Páginas
 
         protected void btn_Cambiar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string usuario = txt_ID.Text;
+                int result = Int32.Parse(usuario);
+                string clave = txt_Clave.Text;
+                string Apellidos = txt_Apellidos.Text;
+                string Nombre = txt_Nombre.Text;
 
-            string usuario = txt_ID.Text;
-            int result = Int32.Parse(usuario);
-            string clave = txt_Clave.Text;
-            string Apellidos = txt_Apellidos.Text;
-            string Nombre = txt_Nombre.Text;
+                Encriptar encriptar = new Encriptar();
+                string clavedes = encriptar.GetSHA256(clave);
 
-            Encriptar encriptar = new Encriptar();
-            string clavedes = encriptar.GetSHA256(clave);
+                ClaseUsuario CU = new ClaseUsuario();
+                CU.InsertarUsuario(2, result, Nombre, Apellidos, clavedes);
+            }
+            catch
+            {
+                Response.Write("<script>alert('Error al actualizar datos, intente de nuevo')</script>");
+            }
 
-            ClaseUsuario CU = new ClaseUsuario();
-            CU.InsertarUsuario(2, result, Nombre, Apellidos, clavedes);
+        }
 
+        protected void txt_Apellidos_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
