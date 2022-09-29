@@ -14,7 +14,6 @@
         <div>
             Ingrese los datos para la creacion de su usuario<br />
             <br />
-            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="cambiarCredenciales.aspx">Cambiar Credenciales</asp:HyperLink>
             <br />
             <br />
             Identificacion&nbsp;&nbsp;
@@ -35,6 +34,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
            <div>
                <asp:Button class="btn btn-primary" ID="btnGuardar" runat="server" OnClick="btnGuardar_Click" Text="Guardar" style="width: 68px" />
+        &nbsp;&nbsp;&nbsp;
+               <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="Login.aspx">LogIn</asp:HyperLink>
         </div>
     </form>
        </center>

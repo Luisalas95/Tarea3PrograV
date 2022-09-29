@@ -12,7 +12,7 @@
     <center>
     <form id="form1" runat="server">
         <div>
-            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="AdministracionProductos.aspx">Administrar Productos</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="AgregarProductoNuevo.aspx">Administrar Productos</asp:HyperLink>
         </div>
         <p>
             Identificación&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -28,7 +28,7 @@
         </p>
         <p>
             Contraseña&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:TextBox class="form-control me-sm-2" ID="txt_Clave" runat="server" Width="170px"></asp:TextBox>
+            <asp:TextBox class="form-control me-sm-2" ID="txt_Clave" runat="server" Width="170px" TextMode="Password"></asp:TextBox>
         </p>
         <p>
             <asp:Button class="btn btn-primary" ID="btn_Cambiar" runat="server" OnClick="btn_Cambiar_Click" Text="Cambiar Credenciales" />

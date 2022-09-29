@@ -133,7 +133,6 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="CSS\Estilos.css" />
     <Content Include="Global.asax" />
-    <Content Include="Páginas\AdministracionProductos.aspx" />
     <Content Include="Páginas\AgregarProductoNuevo.aspx" />
     <Content Include="Páginas\CambiarCredenciales.aspx" />
     <Content Include="Páginas\CrearUsuario.aspx" />
@@ -156,13 +155,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ModeloUsuario.cs" />
-    <Compile Include="Páginas\AdministracionProductos.aspx.cs">
-      <DependentUpon>AdministracionProductos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Páginas\AdministracionProductos.aspx.designer.cs">
-      <DependentUpon>AdministracionProductos.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Páginas\AgregarProductoNuevo.aspx.cs">
       <DependentUpon>AgregarProductoNuevo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

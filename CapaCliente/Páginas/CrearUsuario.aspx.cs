@@ -14,17 +14,10 @@ namespace CapaCliente.Páginas
 {
     public partial class CrearUsuario : System.Web.UI.Page
     {
-        string ClaveNueva = "";
-        string Clave = "";
-        string ClaveEncriptada = "";
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            ClaseUsuario claseUsuario = new ClaseUsuario();
-            Encriptar encriptar = new Encriptar();
-            GeneraClave generaClave = new GeneraClave();
-            ClaveEncriptada = encriptar.GetSHA256(ClaveNueva);
-            ClaveNueva = GeneraClave.ClaveGenerada(Clave);
-            lblClave.Text = ClaveNueva;
+           
            
 
         }
@@ -41,20 +34,33 @@ namespace CapaCliente.Páginas
         {
             try
             {
+
+                string ClaveNueva = "";
+                string Clave = "";
+                string ClaveEncriptada = "";
+
                 string IDs = txt_ID.Text;
                 string Nombre = txt_Nombre.Text;
                 string Apellidos = txt_Apellidos.Text;
 
-
-                int ID = Int32.Parse(IDs);
-                string Clave = "";
-
                 ClaseUsuario claseUsuario = new ClaseUsuario();
+                Encriptar encriptar = new Encriptar();
+                GeneraClave generaClave = new GeneraClave();
+               
+                ClaveNueva = GeneraClave.ClaveGenerada(Clave);
+                
+                lblClave.Text = ClaveNueva;
+
+                Response.Write("<script>alert('Contraseña: " + ClaveNueva + "')</script>");
+                int ID = Int32.Parse(IDs);
+                
+
+                ClaveEncriptada = encriptar.GetSHA256(ClaveNueva);
 
 
                 claseUsuario.InsertarUsuario(1, ID, Nombre, Apellidos, ClaveEncriptada);
 
-                Response.Redirect("AdministracionProductos.aspx");
+              //  Response.Redirect("Login.aspx");
             }
             catch
             {
