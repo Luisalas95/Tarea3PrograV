@@ -27,20 +27,27 @@ namespace CapaNegocios
 
                 throw ex;
             }
-            
+
         }
 
-    
 
-        public List<Object>ConsultaProductos() { 
+
+        public List<Object> ConsultaProductos() {
             var query = entities.Listar_Productos();
             return query.ToList<Object>();
         }
 
-        public List<Object> ListaProductoCodigo(int codigoProducto)
+        public string ListaProductoCodigo(int codigoProducto)
         {
-            var query = entities.ListaProductosCodigo(codigoProducto);
-            return query.ToList<Object>();
+            string Lista="";
+           var query = entities.ListaProductosCodigo(codigoProducto);
+            foreach (var item in query)
+            {
+                Lista = item.NombreProducto + "/" + item.Existencias + "/" + item.BodegaUbicacion;
+
+            }
+
+            return Lista;
         }
 
 

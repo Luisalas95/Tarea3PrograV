@@ -3,6 +3,7 @@ using CapaNegocios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -19,13 +20,18 @@ namespace CapaCliente.Páginas
 
         protected void Page_Load(object sender, EventArgs e)
         {
-             String CodigoProducto = Request.QueryString["CodigoP"];
-            int CodigoProductoEntero = int.Parse(Request.QueryString["CodigoP"]);
-            txt_codigoproduct.Value = CodigoProducto;
-
-
-
-
+            if (!Page.IsPostBack)
+            {
+                string CodigoProducto = Request.QueryString["CodigoP"];
+                string NombreProducto = Request.QueryString["NomProduct"];
+                string Existencia = Request.QueryString["Existenc"];
+                string Bodega = Request.QueryString["Bodeg"];
+                int CodigoProductoEntero = int.Parse(Request.QueryString["CodigoP"]);
+                txt_codigoproduct.Value = CodigoProducto;
+                txt_Nomb.Value = NombreProducto;
+                txt_existencia.Value = Existencia;
+                txt_UbicacionBodega.Value = Bodega;
+            }
 
 
         }
@@ -34,22 +40,23 @@ namespace CapaCliente.Páginas
         {
             try
             {
-                Producto1.CodigoProducto = int.Parse(txt_codigoproduct.Value);
-                Producto1.NombreProducto = txt_Nomb.Value;
-                Producto1.Existencias = float.Parse(txt_existencia.Value);
-                Producto1.BodegaUbicacion = txt_UbicacionBodega.Value;
-                ProductoNegocios.CrudProductos(2,Producto1);
+                Producto Producto2 = new Producto();
+                
+                Producto2.CodigoProducto = int.Parse(txt_codigoproduct.Value);
+                Producto2.NombreProducto = txt_Nomb.Value;
+                Producto2.Existencias = float.Parse(txt_existencia.Value);
+                Producto2.BodegaUbicacion = txt_UbicacionBodega.Value;
+                ProductoNegocios.CrudProductos(2,Producto2);
                 Response.Write("<script> alert('Se actualizo de forma correcta por favor regrese a la pantalla anterior')  </script> ");
-                txt_codigoproduct.Value = "";
-                txt_Nomb.Value = "";
-                txt_UbicacionBodega.Value = "";
-                txt_existencia.Value = "";
+                 
+                //  Response.Redirect("AgregarProductoNuevo.aspx");
 
             }
             catch (Exception)
             {
 
                 Response.Write("<script> alert('Error al actualizar')  </script> ");
+
             }
 
 
@@ -63,13 +70,16 @@ namespace CapaCliente.Páginas
                 Producto1.CodigoProducto = int.Parse(txt_codigoproduct.Value);
                 Producto1.NombreProducto = "";
                 Producto1.Existencias = 0;
-                Producto1.BodegaUbicacion = "",
+                Producto1.BodegaUbicacion = "";
                 ProductoNegocios.CrudProductos(3, Producto1);
                 Response.Write("<script> alert('Se elimino de forma correcta por favor regrese a la pantalla anterior')  </script> ");
                 txt_codigoproduct.Value = "";
                 txt_Nomb.Value = "";
-                txt_UbicacionBodega.Value = "";
                 txt_existencia.Value = "";
+                txt_UbicacionBodega.Value = "";
+
+
+
 
             }
             catch (Exception)

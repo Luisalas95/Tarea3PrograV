@@ -59,8 +59,16 @@ namespace CapaCliente.Páginas
             {
                 GridViewRow row = GridViewProductos.SelectedRow;
                 int CodigoProducto = Convert.ToInt32(GridViewProductos.DataKeys[row.RowIndex].Value);
-      
-                Response.Redirect("MantenimientoProductos.aspx?CodigoP=" + CodigoProducto);
+                string consultaProductos = ProductoNegocios.ListaProductoCodigo(CodigoProducto);
+                string[] lista = consultaProductos.Split('/');
+                string NombreProducto = lista[0];
+                string Existencias = lista[1];
+                string Bodega = lista[2];
+
+
+
+                Response.Redirect("MantenimientoProductos.aspx?CodigoP=" + CodigoProducto 
+                 +"&NomProduct=" + NombreProducto +"&Existenc=" + Existencias + "&Bodeg=" + Bodega);
 
 
             }
