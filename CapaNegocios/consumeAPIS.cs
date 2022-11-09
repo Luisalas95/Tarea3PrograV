@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocios
 {
-    public class Class1
+    internal class consumeAPIS
     {
     }
 }
